@@ -1,7 +1,7 @@
 ---
 title: "Give this post a title"
 description: "A short summary, if useful."
-category: noticed
+category: uncategorized
 tags: []
 date: "2026-11-14"
 draft: true

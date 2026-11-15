@@ -2,7 +2,7 @@
 title: "Your post title"
 description: "A short summary, if useful."
 date: "2026-11-15"
-category: noticed
+category: uncategorized
 tags: []
 draft: true
 ---

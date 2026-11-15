@@ -15,7 +15,7 @@ components:
       values:
         - { value: cpp-embedded, label: C++ / Embedded }
         - { value: gaming, label: Gaming }
-        - { value: noticed, label: Noticed }
+        - { value: uncategorized, label: Uncategorized }
   photo:
     type: object
     fields:

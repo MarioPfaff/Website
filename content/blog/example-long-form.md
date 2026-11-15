@@ -1,7 +1,7 @@
 ---
 title: "Example post: how long-form writing looks on this site"
 description: "Placeholder text for checking typography and spacing. Delete before publishing."
-category: noticed
+category: uncategorized
 tags: [example, design]
 date: "2026-11-15"
 draft: true

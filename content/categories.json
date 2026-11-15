@@ -1,5 +1,5 @@
 {
-  "default": "noticed",
+  "default": "uncategorized",
   "categories": [
     {
       "id": "cpp-embedded",
@@ -10,6 +10,11 @@
       "id": "gaming",
       "name": "Gaming",
       "tone": "sage"
+    },
+    {
+      "id": "uncategorized",
+      "name": "Uncategorized",
+      "tone": "tan"
     }
   ]
 }
