@@ -11,7 +11,7 @@ for (const route of contentCatalog.routes) {
     1,
     `Expected one page title for ${route}`
   )
-  assert.match(pageHtml, /class="(?:page-intro|home-intro)[ "]/, `Missing page title for ${route}`)
+  assert.match(pageHtml, /<h1[^>]*\bid="page-title"/, `Missing page title for ${route}`)
   for (const [, attributeUrl] of pageHtml.matchAll(/(?:href|src)="([^"#]+)"/g)) {
     if (!attributeUrl.startsWith('/') || attributeUrl.startsWith('//')) continue
     let localPath = decodeURIComponent(attributeUrl.split(/[?#]/)[0])
