@@ -4,14 +4,11 @@
   "introTitle": "Hi, I’m Mario.",
   "introText": "I write about things I’m making, films, games, and whatever else I’m interested in.",
   "photo": {
-    "src": "",
-    "alt": "",
-    "caption": ""
+    "src": "/media/images/IMG-20261111-WA00252.jpg",
+    "alt": "Mario Pfaff"
   },
-  "now": [],
-  "work": "I work as a backend engineer at Eureka Software.",
-  "signOff": "",
+  "work": "Backend Engineer @ Eureka Software",
   "githubUrl": "https://github.com/MarioPfaff",
   "linkedinUrl": "https://www.linkedin.com/in/mario-pfaff/",
-  "email": ""
+  "email": "mariojuliaanpfaff@gmail.com"
 }
