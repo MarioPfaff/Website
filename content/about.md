@@ -1,11 +1,8 @@
 ---
-title: "About me"
+title: About me
 photo:
-  src: ""
-  alt: ""
-  caption: ""
+  src: /media/images/IMG-20261111-WA00252-1.jpg
 ---
-
 I’m Mario. I write software, and I’m learning embedded C++ and electronics through Frankensynth.
 
 I’m also interested in films and games. I’ll write about those here too, along with whatever else catches my attention.
