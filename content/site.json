@@ -4,7 +4,8 @@
   "introTitle": "Hi, I’m Mario.",
   "introText": "I write about things I’m making, films, games, and whatever else I’m interested in.",
   "photo": {
-    "src": "/media/images/IMG-20261111-WA00252.jpg"
+    "src": "/media/images/IMG-20261111-WA00252.jpg",
+    "alt": "Mario Pfaff"
   },
   "work": "Backend Engineer @ Eureka Software",
   "githubUrl": "https://github.com/MarioPfaff",
