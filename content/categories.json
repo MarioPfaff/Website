@@ -1,0 +1,20 @@
+{
+  "default": "noticed",
+  "categories": [
+    {
+      "id": "cpp-embedded",
+      "name": "C++ / Embedded",
+      "tone": "rust"
+    },
+    {
+      "id": "gaming",
+      "name": "Gaming",
+      "tone": "sage"
+    },
+    {
+      "id": "noticed",
+      "name": "Noticed",
+      "tone": "tan"
+    }
+  ]
+}

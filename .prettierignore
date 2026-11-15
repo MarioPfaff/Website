@@ -1,0 +1,7 @@
+node_modules/
+.nuxt/
+.output/
+.generated/
+.npm-cache/
+app/data/content.json
+package-lock.json

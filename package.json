@@ -1,0 +1,30 @@
+{
+  "name": "mario-pfaff-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev --host 127.0.0.1",
+    "generate": "nuxt generate",
+    "build": "nuxt generate",
+    "postinstall": "nuxt prepare",
+    "preview": "node scripts/preview.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check:static": "node scripts/check-routes.mjs",
+    "typecheck": "nuxt typecheck",
+    "format": "prettier --write app scripts tests nuxt.config.ts tsconfig.json",
+    "check:format": "prettier --check app scripts tests nuxt.config.ts tsconfig.json"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.1.1",
+    "nuxt": "^4.6.4",
+    "vue": "^3.5.30",
+    "vue-router": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "prettier": "^3.10.1",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.3.14"
+  }
+}

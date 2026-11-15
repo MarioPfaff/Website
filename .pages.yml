@@ -1,0 +1,154 @@
+# Pages CMS configuration: https://pagescms.org/docs/configuration/
+# Every piece of the site's content is editable here. Saving commits to the repository and
+# the GitHub Pages workflow rebuilds the site. The build checks everything (required fields,
+# alt text, valid links), so a mistake fails the build instead of breaking the live site.
+
+media:
+  input: content/images
+  output: /media/images
+
+components:
+  # Keep these ids in step with content/categories.json.
+  category:
+    type: select
+    options:
+      values:
+        - { value: cpp-embedded, label: C++ / Embedded }
+        - { value: gaming, label: Gaming }
+        - { value: noticed, label: Noticed }
+  photo:
+    type: object
+    fields:
+      - { name: src, label: Image, type: image }
+      - name: alt
+        label: Alt text
+        type: string
+        description: Describe the photo for people who can't see it. Required when there's an image.
+      - { name: caption, label: Caption, type: string, description: Shown under the polaroid. }
+
+content:
+  - name: posts
+    label: Blog posts
+    type: collection
+    path: content/blog
+    filename: '{primary}.md'
+    format: yaml-frontmatter
+    view:
+      fields: [title, date, category, draft]
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: description, label: Summary, type: text, description: One line shown in post lists. }
+      - { name: category, label: Category, component: category }
+      - { name: tags, label: Tags, type: string, list: true }
+      - { name: date, label: Date, type: date, required: true }
+      - { name: draft, label: Draft, type: boolean, default: true, description: Drafts are never published. }
+      - { name: body, label: Post, type: rich-text, options: { format: markdown } }
+
+  - name: projects
+    label: Projects
+    type: collection
+    path: content/projects
+    filename: '{primary}.md'
+    format: yaml-frontmatter
+    view:
+      fields: [title, status, draft]
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: description, label: Short description, type: text, required: true }
+      - name: status
+        label: Status
+        type: select
+        options:
+          values: [In progress, Finished, Paused]
+      - { name: technologies, label: Technologies, type: string, list: true }
+      - { name: repositoryUrl, label: Code URL, type: string, pattern: '^(https?://.*)?$' }
+      - { name: websiteUrl, label: Website URL, type: string, pattern: '^(https?://.*)?$' }
+      - name: photos
+        label: Photos
+        description: The first photo is the polaroid on the home page.
+        component: photo
+        list: true
+      - { name: order, label: Order, type: number, description: Lower numbers come first. }
+      - { name: draft, label: Draft, type: boolean, default: true }
+      - { name: body, label: Project page text, type: rich-text, options: { format: markdown } }
+
+  - name: notes
+    label: Build notes
+    type: collection
+    path: content/notes
+    filename: '{primary}.md'
+    format: yaml-frontmatter
+    view:
+      fields: [title, project, date, draft]
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: description, label: Summary, type: text }
+      - name: project
+        label: Project
+        type: reference
+        required: true
+        options:
+          collection: projects
+          value: '{path}'
+          label: '{title}'
+      - { name: category, label: Category, component: category }
+      - { name: tags, label: Tags, type: string, list: true }
+      - { name: date, label: Date, type: date, required: true }
+      - { name: draft, label: Draft, type: boolean, default: true }
+      - { name: body, label: Note, type: rich-text, options: { format: markdown } }
+
+  - name: site
+    label: Site settings
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: description, label: Search engine description, type: text }
+      - { name: introTitle, label: Home page title, type: string }
+      - { name: introText, label: Home page intro, type: text }
+      - { name: photo, label: Home page photo, component: photo }
+      - name: now
+        label: Now
+        description: The small "now" line on the home page, e.g. "playing" → "a game".
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: value, label: Value, type: string }
+      - { name: work, label: Work line, type: text, description: Shown in the footer on every page. }
+      - { name: signOff, label: Home page sign-off, type: text }
+      - { name: githubUrl, label: GitHub URL, type: string }
+      - { name: linkedinUrl, label: LinkedIn URL, type: string }
+      - { name: email, label: Email, type: string }
+
+  - name: about
+    label: About page
+    type: file
+    path: content/about.md
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Title, type: string }
+      - { name: photo, label: Photo, component: photo }
+      - { name: body, label: Text, type: rich-text, options: { format: markdown } }
+
+  - name: categories
+    label: Categories
+    type: file
+    path: content/categories.json
+    format: json
+    fields:
+      - { name: default, label: Default category id, type: string }
+      - name: categories
+        label: Categories
+        description: If you add one, also add it to the category component at the top of .pages.yml.
+        type: object
+        list: true
+        fields:
+          - { name: id, label: Id (used in the address), type: string, pattern: '^[a-z0-9]+([-_][a-z0-9]+)*$' }
+          - { name: name, label: Name, type: string }
+          - name: tone
+            label: Label colour
+            type: select
+            options:
+              values: [rust, sage, tan]

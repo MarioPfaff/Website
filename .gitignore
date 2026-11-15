@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+.npm-cache/
+
+# Nuxt and build output
+.nuxt/
+.output/
+.generated/
+dist/
+
+# Generated from content/ on every build
+app/data/content.json
+
+# Environment and secrets
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

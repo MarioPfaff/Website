@@ -1,0 +1,17 @@
+{
+  "name": "Mario Pfaff",
+  "description": "Mario Pfaff’s personal site: C++ and embedded retrospectives, games, projects and whatever else I’m interested in.",
+  "introTitle": "Hi, I’m Mario.",
+  "introText": "I write about things I’m making, films, games, and whatever else I’m interested in.",
+  "photo": {
+    "src": "",
+    "alt": "",
+    "caption": ""
+  },
+  "now": [],
+  "work": "I work as a backend engineer at Eureka Software.",
+  "signOff": "",
+  "githubUrl": "https://github.com/MarioPfaff",
+  "linkedinUrl": "https://www.linkedin.com/in/mario-pfaff/",
+  "email": ""
+}
