@@ -12,8 +12,8 @@ export function useSite() {
   const site = contentRepository.getSite()
 
   const socialLinkCollection: SocialLink[] = [
-    { label: 'GitHub ↗', url: site.githubUrl },
-    { label: 'LinkedIn ↗', url: site.linkedinUrl },
+    { label: 'GitHub', url: site.githubUrl },
+    { label: 'LinkedIn', url: site.linkedinUrl },
     { label: 'Email', url: site.email ? `mailto:${site.email}` : '' }
   ].filter((socialLink) => socialLink.url)
 

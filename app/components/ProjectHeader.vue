@@ -10,7 +10,7 @@ defineProps<{ project: Project }>()
   >
     <template #before>
       <NuxtLink
-        class="text-link intro-back"
+        class="text-link"
         to="/projects"
       >
         ← Projects

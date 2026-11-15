@@ -4,7 +4,7 @@ const property = withDefaults(defineProps<{ project: Project; index?: number }>(
 const projectView = useProject(property.project)
 // Cards alternate sides, so the photos zig-zag down the page.
 const isFlipped = property.index % 2 === 1
-const placement = usePolaroid().getPlacement(property.index + 1)
+const placement = usePolaroid().getPlacement(property.index)
 </script>
 
 <template>
@@ -49,13 +49,10 @@ const placement = usePolaroid().getPlacement(property.index + 1)
           <NuxtLink :to="projectView.latestPost.url">{{ projectView.latestPost.title }}</NuxtLink>
         </span>
       </p>
-      <div class="contact-links">
-        <NuxtLink
-          class="text-link"
-          :to="project.url"
-        >
-          Project page →
-        </NuxtLink>
+      <div
+        v-if="projectView.latestPost || project.repositoryUrl"
+        class="contact-links"
+      >
         <NuxtLink
           v-if="projectView.latestPost"
           class="text-link"

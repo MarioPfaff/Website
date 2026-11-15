@@ -12,7 +12,7 @@ const { backLink } = usePost(property.post)
   >
     <template #before>
       <NuxtLink
-        class="text-link intro-back"
+        class="text-link"
         :to="backLink.url"
       >
         ← {{ backLink.label }}

@@ -55,7 +55,7 @@ usePageMeta({ description: site.description || site.introText })
           id="writing-heading"
           title="Writing"
         />
-        <WritingList :limit="5" />
+        <WritingList :limit="3" />
         <NuxtLink
           class="text-link section-more"
           to="/blog"

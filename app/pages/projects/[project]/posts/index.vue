@@ -11,7 +11,7 @@ usePageMeta({
     <PageIntro :title="`${project.title}: build notes`">
       <template #before>
         <NuxtLink
-          class="text-link intro-back"
+          class="text-link"
           :to="project.url"
         >
           ← {{ project.title }}

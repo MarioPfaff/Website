@@ -20,7 +20,7 @@ usePageMeta({ title: 'Page not found', description: 'This page doesn’t exist.'
       >
         <template #before>
           <NuxtLink
-            class="text-link intro-back"
+            class="text-link"
             to="/"
           >
             ← Home

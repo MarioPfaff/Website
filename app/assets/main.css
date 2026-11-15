@@ -58,7 +58,7 @@ body {
   min-height: 100vh;
   /* A soft desk-lamp glow in the top corner, part of the page rather than a box. */
   background:
-    radial-gradient(ellipse 1100px 900px at 10% -12%, var(--lamp), transparent 62%) no-repeat,
+    radial-gradient(550px 450px at 310px 150px, var(--lamp), transparent) no-repeat,
     var(--page);
   color: var(--ink);
   font-family: var(--sans);
@@ -195,13 +195,13 @@ h1 {
 .page-intro h1.intro-title-extended {
   font-size: 2rem;
 }
+/* Back link, status and post details stack above the title, each on its own line. */
 .intro-before {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
   margin-bottom: 20px;
-}
-.intro-back {
-  display: block;
-  width: fit-content;
-  margin-bottom: 14px;
 }
 .intro-description {
   max-width: 640px;
@@ -220,7 +220,7 @@ h1 {
   align-items: center;
   gap: 48px;
   padding-top: 48px;
-  padding-bottom: 8px;
+  padding-bottom: 28px;
 }
 .home-intro-text {
   flex: 999 1 460px;
@@ -261,7 +261,7 @@ h1 {
   padding-bottom: 24px;
 }
 .section-more {
-  margin-top: 14px;
+  margin-top: 10px;
 }
 
 /* Sections */
@@ -356,17 +356,9 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px 14px;
+  gap: 6px 12px;
   color: var(--muted);
   font-size: 12px;
-}
-.writing-project {
-  text-decoration: underline;
-  text-decoration-color: var(--line);
-  text-underline-offset: 4px;
-}
-.writing-project:hover {
-  color: var(--accent);
 }
 .writing-row h3 {
   margin-top: 10px;
@@ -404,13 +396,16 @@ h1 {
 }
 
 /* Projects */
+.project-card .contact-links {
+  gap: 8px 22px;
+}
 .project-list > .project-card + .project-card {
   margin-top: 40px;
   padding-top: 40px;
   border-top: 1px solid var(--line);
 }
 .project-card {
-  padding-top: 28px;
+  padding-top: 32px;
 }
 .project-card-with-photo {
   display: flex;
@@ -448,7 +443,7 @@ h1 {
 .project-card h3 {
   margin-top: 8px;
   font-family: var(--serif);
-  font-size: 2.5rem;
+  font-size: 2.625rem;
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -502,8 +497,7 @@ h1 {
   font-size: 1rem;
   line-height: 1.6;
   text-decoration: underline;
-  text-decoration-color: var(--line);
-  text-underline-offset: 5px;
+  text-underline-offset: 4px;
 }
 .text-link:hover {
   color: var(--accent);
@@ -738,7 +732,7 @@ h1 {
   justify-content: space-between;
   gap: 12px 32px;
   position: relative;
-  margin-top: 72px;
+  margin-top: 88px;
   padding-top: 22px;
   padding-bottom: 48px;
 }
@@ -750,9 +744,6 @@ h1 {
   left: var(--shell-padding);
   right: var(--shell-padding);
   border-top: 1px solid var(--line);
-}
-.site-footer .contact-links {
-  margin-top: 0;
 }
 .footer-note {
   max-width: 36em;
@@ -771,9 +762,16 @@ h1 {
 }
 .footer-note .text-link {
   color: var(--ink);
-  font-family: var(--sans);
-  font-size: 1rem;
+  font-family: inherit;
+  font-size: inherit;
   font-style: normal;
+}
+.site-footer .contact-links {
+  gap: 8px 18px;
+  color: var(--muted);
+}
+.site-footer .contact-links .text-link {
+  font-size: 0.9375rem;
 }
 
 @media (max-width: 700px) {
@@ -852,7 +850,7 @@ h1 {
     flex-direction: row;
   }
   .site-footer {
-    margin-top: 56px;
+    margin-top: 64px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

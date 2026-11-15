@@ -12,14 +12,6 @@ defineProps<{ post: Post }>()
         :tone="post.categoryTone"
       />
       <time :datetime="post.date">{{ post.date }}</time>
-      <span>{{ post.minutes }} min</span>
-      <NuxtLink
-        v-if="post.project"
-        class="writing-project"
-        :to="`/projects/${post.project}`"
-      >
-        {{ post.projectTitle }}
-      </NuxtLink>
     </div>
     <h3>
       <NuxtLink

@@ -17,19 +17,19 @@ const navigation = usePageNavigation()
         to="/blog"
         :class="{ active: navigation.isSectionActive('blog') }"
       >
-        Writing
+        writing
       </NuxtLink>
       <NuxtLink
         to="/projects"
         :class="{ active: navigation.isSectionActive('projects') }"
       >
-        Projects
+        projects
       </NuxtLink>
       <NuxtLink
         to="/about"
         :class="{ active: navigation.isSectionActive('about') }"
       >
-        About
+        about
       </NuxtLink>
     </nav>
   </header>
