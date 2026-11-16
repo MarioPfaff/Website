@@ -25,7 +25,7 @@ usePageMeta({ title: about.title, description: site.work || site.description })
         :photo="about.photo"
         :tilt="-2"
         tape="sage"
-        ratio="4 / 5"
+        ratio="1"
       />
     </section>
   </div>

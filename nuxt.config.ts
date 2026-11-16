@@ -24,8 +24,7 @@ export default defineNuxtConfig({
           name: 'description',
           content: contentCatalog.site.description || contentCatalog.site.introText
         }
-      ],
-      link: [{ rel: 'icon', type: 'image/svg+xml', href: `${baseUrl}favicon.svg` }]
+      ]
     }
   },
   nitro: { prerender: { crawlLinks: true, routes: contentCatalog.routes } }
